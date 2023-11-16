@@ -4,6 +4,7 @@ import os
 from bing_image_downloader import downloader
 import json
 import random
+import shutil
 
 # load environment variables
 load_dotenv()
@@ -38,13 +39,17 @@ player_name = data['footballers'][random.randint(0,len(data['footballers']) - 1)
 print("Selected player : " + player_name)
 
 # Download image from Bing
-search_query= player_name + " playing football jpg"
-downloader.download(search_query, limit=1, verbose=False)
+search_query= player_name + " playing football"
+downloader.download(search_query, limit=1, verbose=False, output_dir='img')
 print("Download done :D")
-# input("Press Enter to continue...")
+input("Press Enter to continue...")
 
-""" # Create tweet with player name + image
-mediaId = client_v1.media_upload("dataset/" + search_query + "/Image_1.jpg")
+# Create tweet with player name + image
+try:
+    mediaId = client_v1.media_upload("img/" + search_query + "/Image_1.jpg")
+except:
+    mediaId = client_v1.media_upload("img/" + search_query + "/Image_1.png")
+
 client_v2.create_tweet(
     text=player_name,
     media_ids=[mediaId.media_id_string]
@@ -52,5 +57,8 @@ client_v2.create_tweet(
 print("Tweet done :D")
 print("Press Enter to continue...")
 
+
 # Delete image from local storage
-os.remove(dataset) """
+if os.path.isdir("img"):
+    shutil.rmtree("img")
+
