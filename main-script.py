@@ -34,10 +34,8 @@ json_file = open('db.json', encoding="utf8")
 data = json.load(json_file)
 json_file.close()
 
-# Select a player randomly
-while True:
-    player_name = data['footballers'][random.randint(0,len(data['footballers']) - 1)]["name"]
-    print("Selected player : " + player_name)
+player_name = data['footballers'][random.randint(0,len(data['footballers']) - 1)]["name"]
+print("Selected player : " + player_name)
 
 # Download image from Bing
 search_query= player_name + " playing football"
