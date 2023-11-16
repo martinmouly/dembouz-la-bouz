@@ -1,7 +1,7 @@
 ## Daily dose of forgotten footballers
 
 Go follow the twitter bot ---> [link](https://twitter.com/daily_ballerz)  
-
+Player database fed by ChatGPT (struggled to find a good database, notify me if you find a good one)  
   
 
   
