@@ -30,19 +30,19 @@ client_v2 = tweepy.Client(
 )
 
 # Open and read all players from db
-json_file = open('db.json')
+json_file = open('db.json', encoding="utf8")
 data = json.load(json_file)
 json_file.close()
 
 # Select a player randomly
-player_name = data['footballers'][random.randint(0,len(data['footballers']) - 1)]["name"]
-print("Selected player : " + player_name)
+while True:
+    player_name = data['footballers'][random.randint(0,len(data['footballers']) - 1)]["name"]
+    print("Selected player : " + player_name)
 
 # Download image from Bing
 search_query= player_name + " playing football"
 downloader.download(search_query, limit=1, verbose=False, output_dir='img')
 print("Download done :D")
-input("Press Enter to continue...")
 
 # Create tweet with player name + image
 try:
@@ -55,8 +55,6 @@ client_v2.create_tweet(
     media_ids=[mediaId.media_id_string]
 ) 
 print("Tweet done :D")
-print("Press Enter to continue...")
-
 
 # Delete image from local storage
 if os.path.isdir("img"):
