@@ -1,9 +1,4 @@
-## Daily dose of forgotten footballers
+## Dembélé a-t-il marqué pour le PSG ?
 
-Go follow the twitter bot ---> [link](https://twitter.com/daily_ballerz)  
-Player database fed by ChatGPT (struggled to find a good database, notify me if you find a good one)  
-  
-
-  
-![image](https://github.com/martinmouly/daily-forgotten-baller/assets/19230666/8acc69f3-2e16-499b-97e7-946095939973)
+Twitter bot ---> [link](https://twitter.com/11minutos_tarde)
 
