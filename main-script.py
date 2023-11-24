@@ -28,7 +28,7 @@ client_v2 = tweepy.Client(
 # fetch img from local storage and tweet 
 mediaId = client_v1.media_upload("img/" + "dembele.jpg")
 client_v2.create_tweet(
-    text="Non.",
+    text="OUI!!!!!",
     media_ids=[mediaId.media_id_string]
 ) 
 print("Tweet done :D")
