@@ -2,9 +2,6 @@ name: execute script
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 22 * * *'
-  
 
 jobs:
   build:
